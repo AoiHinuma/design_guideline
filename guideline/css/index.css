@@ -1,0 +1,14 @@
+@charset "UTF-8";
+h3 {
+	border-bottom: 1px solid #007cff;
+	color: #007cff;
+}
+.change_log thead tr{
+	background-color: #F1F1F1;
+}
+.change_log tbody tr{
+	background-color: #ffffff;
+}
+#nav ul {
+	background: #007cff;
+}

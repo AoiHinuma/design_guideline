@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+<!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<meta charset="utf-8">
+<title>KDDIウェブコミュニケーションズコーディングガイドライン</title>
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<!--<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">-->
+
+<!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link rel="stylesheet" href="common/css/normalize.css">
+<link rel="stylesheet" href="common/css/skeleton.css">
+<link rel="stylesheet" href="css/index.css">
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<script src="common/js/vendor/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="common/js/nav.js"></script>
+</head>
+<body>
+
+<!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="wrap container">
+	<div class="row">
+		<div class="columns nine">
+			<header>
+				<h1>KDDIウェブコミュニケーションズ<br>
+					コーディングガイドライン</h1>
+				<p>本ガイドラインは、WEBサイト制作を行う際の記述ルールなどを定めたものです。</p>
+			</header>
+			<div class="main">
+				<section class="about h2_conts" id="about">
+					<h2>ガイドラインについて</h2>
+					<section>
+						<h3>目的</h3>
+						<p>本ガイドラインは、新規ページの作成や既存ページの修正・更新作業の際に、クオリティーの統一とメンテナンス性の向上を目的に作成しています。<br>
+コーディングを行うスタッフは、ガイドラインがある意味と内容をよく理解し、ガイドラインに則ったコーディングを行ってください。</p>
+					</section>
+					<section>
+						<h3>更新履歴</h3>
+						<table class="change_log">
+						<thead>
+								<tr>
+									<th>日時</th>
+									<th>変更内容</th>
+								</tr>
+								</thead>
+							<tbody>
+								<tr>
+									<td>2017 年 2月 24日</td>
+									<td>ガイドライン 1.0.0更新</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+				</section>
+				<!--about_end-->
+				<section class="overview h2_conts" id="overview">
+					<h2>WEBサイト仕様概要</h2>
+					<section class="specification" id="specification">
+						<h3>WEBサイト仕様について</h3>
+						<p>本ガイドラインでは、WEBサイトの基本仕様を以下と定めます。</p>
+						<table>
+							<tbody>
+								<tr>
+									<th>DTD（文書型定義）</th>
+									<td>HTML5</td>
+								</tr>
+								<tr>
+									<th>XML</th>
+									<td>なし</td>
+								</tr>
+								<tr>
+									<th>CSS</th>
+									<td>CSS3</td>
+								</tr>
+								<tr>
+									<th>Charset</th>
+									<td>UTF-8</td>
+								</tr>
+								<tr>
+									<th>OS</th>
+									<td>Windows、Mac</td>
+								</tr>
+								<tr>
+									<th>対象ブラウザ</th>
+									<td><p>Windsows</p>
+										<ul>
+											<li>Internet Explorer9～</li>
+											<li>Mozilla Firefox</li>
+											<li>Google Chrome</li>
+										</ul>
+										<p>Mac</p>
+										<ul>
+											<li>Safari</li>
+											<li>Mozilla Firefox</li>
+											<li>Google Chrome</li>
+										</ul>
+										<p>※バージョン番号の記載がないブラウザは構築時の最新バージョンを対象とします。 </p></td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+					<section class="directory">
+						<h3>ディレクトリ構造</h3>
+						<div class="treeview-gray">
+							<ul id="browser" class="filetree">
+								<li><span class="folder">html</span>
+									<ul>
+										<li><span class="folder">common</span>
+											<ul>
+												<li><span class="folder">css</span><span class="caption">サイト内で共通利用する CSS を格納するフォルダ。</span>
+													<ul>
+														<li><span class="file">common.css</span><span class="caption">サイト内で共通利用する CSS ファイル。</span></li>
+														<li><span class="file">reset.css</span><span class="caption">リセットやコンポーネントなどを記述する CSS ファイル。</span></li>
+														<li><span class="file">hoge.css</span><span class="caption">ライトボックなどの JavaScript に付随する CSS などを記述。</span></li>
+													</ul>
+												</li>
+												<li><span class="folder">img</span><span class="caption">グロナビやリンクアイコンなど、サイト内で共通利用する画像。</span>
+													<ul>
+														<li><span class="file">hoge.jpg</span></li>
+														<li><span class="file">hoge.png</span></li>
+													</ul>
+												</li>
+												<li><span class="folder">include</span><span class="caption">サイト内で共通利用するインクルードファイルを格納するフォルダ。</span>
+													<ul>
+														<li><span class="file">header.html</span></li>
+														<li><span class="file">footer.html</span></li>
+													</ul>
+												</li>
+												<li><span class="folder">js</span>
+													<ul>
+														<li><span class="file">lib.js</span><span class="caption">マウスオーバーなどのサイト全体で利用する JavaScript を記述するファイル。</span></li>
+														<li><span class="file">library.js</span><span class="caption">ライトボックスなど、限定したページで利用するものはファイルを分割する。</span></li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li><span class="folder">category</span><span class="caption">第二階層以下のファイルを格納する。カテゴリ名は適宜命名。</span>
+											<ul>
+												<li><span class="folder">css</span><span class="caption">このカテゴリで利用する CSS を格納する。ファイル名はカテゴリ名と同じにする。</span>
+													<ul>
+														<li><span class="file">category.css</span></li>
+													</ul>
+												</li>
+												<li><span class="folder">img</span><span class="caption">このカテゴリで利用する画像を格納する。</span>
+													<ul>
+														<li><span class="file">hoge.jpg</span></li>
+													</ul>
+												</li>
+												<li><span class="folder">js</span><span class="caption">このカテゴリで利用する JavaScript を格納する。</span>
+													<ul>
+														<li><span class="file">category.js</span></li>
+													</ul>
+												</li>
+												<li><span class="file">index.html</span><span class="caption">このカテゴリのトップ。フォルダ内に index.html を必ず設置すること。</span></li>
+												<li><span class="folder">sub_category</span><span class="caption">このカテゴリの小カテゴリ。フォルダ構造は親カテゴリと同じとする。</span>
+													<ul>
+														<li><span class="folder">css</span></li>
+														<li><span class="folder">img</span></li>
+														<li><span class="file">index.html</span></li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li><span class="folder">css</span><span class="caption">トップページで利用する CSS を格納する。</span>
+											<ul>
+												<li><span class="file">index.css</span></li>
+											</ul>
+										</li>
+										<li><span class="folder">img</span><span class="caption">トップページで利用する画像を格納する。</span>
+											<ul>
+												<li><span class="file">index.jpg</span></li>
+											</ul>
+										</li>
+										<li><span class="folder">js</span><span class="caption">トップページで利用する JavaScript を格納する。</span>
+											<ul>
+												<li><span class="file">index.js</span></li>
+											</ul>
+										</li>
+										<li><span class="file">index.html</span></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<p><span class="marker">ディレクトリ構造の深さは SEO 的な観点から、第四階層までを最大とする。</span></p>
+					</section>
+				</section>
+				<!--overview_end-->
+				<section class="code_format h2_conts" id="code_format">
+					<h2>コードフォーマット</h2>
+					<p>以下はHTML、CSS共通のルールになります。</p>
+					<ol class="panel">
+						<li>インデントは半角スペースを使わず、タブを利用します。</li>
+						<li>Dreamweaverを使用している場合は[環境設定]→[コードフォーマット]内にあるインデントの設定を「タブ」に設定する。</li>
+					</ol>
+					<section>
+						<h3>html</h3>
+						<ul>
+							<li>内包した要素が多く、一目で内容を把握しきれないような入れ子構造ではタブで字下げをしてください。</li>
+							<li>body要素の子要素は字下げしないでください。</li>
+							<li>ブラウザ表示上の文章の改行位置と、HTML上のコードの改行位置を一致させてください。</li>
+						</ul>
+						<p>【記述例】<span class="tab">Tab</span> : タブ入力&nbsp;&nbsp;<span class="rtn">Rtn</span> : ソースコード上の改行</p>
+						<pre><code>
+&lt;body&gt;
+&lt;div&gt;<span class="rtn">Rtn</span><br>
+<span class="tab">Tab</span>&lt;p&gt;本文が入る本文が入る本文が入る本文が入る本文が入る本文が入る&lt;/p&gt;<span class="rtn">Rtn</span><br>
+<span class="tab">Tab</span>&lt;h3&gt;ここにタイトル&lt;/h3&gt;<span class="rtn">Rtn</span><br>
+<span class="tab">Tab</span>&lt;ul&gt;<span class="rtn">Rtn</span><br>
+<span class="tab">Tab</span><span class="tab">Tab</span>&lt;li&gt;リストの内容リストの内容リストの内容リストの内容&lt;/li&gt;<span class="rtn">Rtn</span><br>
+<span class="tab">Tab</span><span class="tab">Tab</span>&lt;li&gt;リストの内容リストの内容リストの内容リストの内容&lt;/li&gt;<span class="rtn">Rtn</span><br>
+<span class="tab">Tab</span>&lt;/ul&gt;<span class="rtn">Rtn</span><br>
+&lt;/div&gt;
+&lt;/body&gt;
+          </code></pre>
+					</section>
+					<section>
+						<h3>css</h3>
+						<ul>
+							<li>開始の中括弧の後に改行を入れてください。</li>
+							<li>プロパティごとに改行してください。</li>
+							<li>プロパティはタブで字下げをしてください。</li>
+							<li>プロパティの値の前に半角スペースを入れてください。</li>
+							<li>複数セレクタは見やすいように適宜改行を入れてください。</li>
+							<li>プロパティが少なく、大量にバージョンのことなるセレクタを用意する場合は1行にまとめてください。</li>
+						</ul>
+						<p>【記述例】<span class="tab">Tab</span> : タブ入力&nbsp;&nbsp;<span class="rtn">Rtn</span> : ソースコード上の改行&nbsp;&nbsp;<span class="sp">Sp</span> : 半角スペース</p>
+						<pre><code>
+.sprite<span class="sp">Sp</span>{<span class="rtn">Rtn</span><br>
+<span class="tab">Tab</span>display:<span class="sp">Sp</span>inline-block;<span class="rtn">Rtn</span><br>
+<span class="tab">Tab</span>width:<span class="sp">Sp</span>16px;<span class="rtn">Rtn</span><br>
+<span class="tab">Tab</span>height:<span class="sp">Sp</span>10px;<span class="rtn">Rtn</span><br>
+<span class="tab">Tab</span>background-image:<span class="sp">Sp</span>url(../img/sprite.png);<span class="rtn">Rtn</span><br>
+}<br>
+.icon { background-position: 0 0; }
+.icon-home { background-position: 0 -20px; }
+.icon-account { background-position: 0 -40px; }
+          </code></pre>
+					</section>
+				</section>
+				<!--code_format_end-->
+				<section class="comment h2_conts" id="comment">
+					<h2>コメントアウト</h2>
+					以下はコメントアウトの基本的仕様になります。<br>
+					フレームワークやその他ツールを使用する場合はそちらのルールに従ってください。
+					<section>
+						<h3>HTML</h3>
+						<p>通常のコメントアウト</p>
+						<pre><code>
+&lt;!-- コメント --&gt;
+      </code></pre>
+						<p>特定要素の終わりを示す</p>
+						<pre><code>
+&lt;div id="container"&gt;
+	&lt;div class="wrap"&gt;
+	&lt;/div&gt;
+&lt;!-- /.wrap --&gt; 
+&lt;/div&gt;
+&lt;!-- /#container --&gt;
+      </code></pre>
+					</section>
+					<section>
+						<h3>CSS</h3>
+						<p>大</p>
+						<pre><code>
+/*------------------------------------------------------------
+調整用クラス
+------------------------------------------------------------*/
+      </code></pre>
+						<p>小</p>
+						<pre><code>
+/* 幅 */
+       </code></pre>
+						<h3>JavaScript</h3>
+						<p>大</p>
+						<pre><code>
+/*------------------------------------------------------------
+ライトボックスの処理
+------------------------------------------------------------*/
+       </code></pre>
+						<p>小</p>
+						<pre><code>
+// ○○がtrueだったら処理停止
+       </code></pre>
+					</section>
+				</section>
+				<!--comment_end-->
+				<section class="naming h2_conts" id="naming">
+					<h2>命名規則</h2>
+					<p>HTMLファイル、画像ファイル及びCSS（ID及びCLASSセレクタ）の名前の付け方は以下を基本ルールとします。</p>
+					<ol class="panel">
+						<li>半角英数字のみを使用。</li>
+						<li>記号は「-」（ハイフン）、「_」（アンダースコア）のみ使用。</li>
+						<li>全角スペース、半角スペースは使用しないでください。</li>
+						<li>機種依存文字の使用を禁止します。</li>
+						<li>数字や記号から開始しないでください。</li>
+						<li>単語の文字数の省略は、基本的に行わないのが原則です。</li>
+					</ol>
+					<p>NG例）</p>
+					<div class="ex">テキストファイル.gif<br>
+						\text.gif<br>
+						img　text<br>
+						500px</div>
+					<section>
+						<h3>HTMLファイル</h3>
+						<ul>
+							<li>何のページか推測出来る英単語や慣例的に使われている名前を付けてください。</li>
+							<li>ファイル名が長くなりすぎてしまう場合は、単語を1～2個に絞ること。</li>
+							<li>その場合「_」（アンダーバー）で単語をつなげてください。</li>
+						</ul>
+					</section>
+					<section>
+						<h3>画像</h3>
+						<p>画像の命名基本ルールは以下のようになっています。<br>
+							項目ごとに詳細なルールを記載します。</p>
+							<p><span class="marker">※（必須項目以外）全ての単語を入れる必要はありません</span></p>
+						<div class="panel"><span class="marker">「ページ名」 _ 「位置」 _ 「要素（必須）」 _「詳細」 _ 「番号(連番)」 _ 「状態」.「拡張子」</span></div>
+						<p>例）</p>
+						<div class="ex">index_news_bnr01.png<br>
+							index_logo_kwc_open.png </div>
+						<section>
+							<h4>ページ名</h4>
+							<p>どのページで使用しているかを判断するために付けます。 ただし、画像フォルダがページごとに分かれている場合不要です。</p>
+							<p>例）</p>
+							<div class="ex">画像フォルダがそのページのみに使用されている場合<br>
+								index_news_bnr01.png<br>
+								画像フォルダが複数ページに使用されている場合(/img/index/)<br>
+								news_bnr01.png</div>
+						</section>
+						<section>
+							<h4>位置</h4>
+							<p>どの部分で使用しているかを判断するために付けます。</p>
+							<p>例）</p>
+							<div class="ex">ヘッダーで使用している背景の場合 header_bg01.png</div>
+							<p class="txt_bold">よく使う「位置」一覧</p>
+							<table>
+								<colgroup>
+								<col width="50%">
+								<col width="50%">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th>ページ全体</th>
+										<td>container</td>
+									</tr>
+									<tr>
+										<th>ヘッダー</th>
+										<td>header</td>
+									</tr>
+									<tr>
+										<th>サイドバー</th>
+										<td>side</td>
+									</tr>
+									<tr>
+										<th>フッター</th>
+										<td>footer</td>
+									</tr>
+									<tr>
+										<th>メインコンテンツ</th>
+										<td>main</td>
+									</tr>
+									<tr>
+										<th>サブコンテンツ</th>
+										<td>sub</td>
+									</tr>
+									<tr>
+										<th>検索ボックス</th>
+										<td>search</td>
+									</tr>
+									<tr>
+										<th>ニュース</th>
+										<td>news</td>
+									</tr>
+									<tr>
+										<th>お知らせ</th>
+										<td>info</td>
+									</tr>
+									<tr>
+										<th>お問い合わせ</th>
+										<td>contact</td>
+									</tr>
+									<tr>
+										<th>次へ</th>
+										<td>next</td>
+									</tr>
+									<tr>
+										<th>前へ</th>
+										<td>prev</td>
+									</tr>
+									<tr>
+										<th>リスト</th>
+										<td>list</td>
+									</tr>
+									<tr>
+										<th>注釈</th>
+										<td>notes</td>
+									</tr>
+									<tr>
+										<th>ogイメージ</th>
+										<td>og</td>
+									</tr>
+								</tbody>
+							</table>
+						</section>
+						<section>
+							<h4>要素</h4>
+							<p>どんな種類の画像なのかを判断するために付けます。</p>
+							<p>例）</p>
+							<div class="ex">ヘッダーで使用しているボタンの場合<br>
+								header_btn_over.png</div>
+							<p class="txt_bold">「要素」一覧</p>
+							<table>
+								<colgroup>
+								<col width="50%">
+								<col width="50%">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th>画像、図、写真</th>
+										<td>img,photo</td>
+									</tr>
+									<tr>
+										<th>サムネイル</th>
+										<td>thumb</td>
+									</tr>
+									<tr>
+										<th>バナー</th>
+										<td>bnr</td>
+									</tr>
+									<tr>
+										<th>ボタン</th>
+										<td>btn</td>
+									</tr>
+									<tr>
+										<th>ロゴ</th>
+										<td>logo</td>
+									</tr>
+									<tr>
+										<th>ナビ</th>
+										<td>nav</td>
+									</tr>
+									<tr>
+										<th>見出し</th>
+										<td>h</td>
+									</tr>
+									<tr>
+										<th>テキスト</th>
+										<td>txt</td>
+									</tr>
+									<tr>
+										<th>アイコン</th>
+										<td>icon</td>
+									</tr>
+									<tr>
+										<th>背景</th>
+										<td>bg</td>
+									</tr>
+									<tr>
+										<th>矢印</th>
+										<td>arrow</td>
+									</tr>
+									<tr>
+										<th>線</th>
+										<td>line</td>
+									</tr>
+									<tr>
+										<th>ページトップ</th>
+										<td>pagetop</td>
+									</tr>
+								</tbody>
+							</table>
+						</section>
+						<section>
+							<h4>詳細</h4>
+							<p>3の「要素」に対して詳細な説明が必要な場合のみ付けます。<br>
+								詳細が長くなりすぎてしまう場合は、特徴的な単語を抜き出しても構いません。</p>
+							<p>例）</p>
+							<div class="ex">リセットするボタンの場合 btn_reset.png<br>
+								kwcのロゴの場合 logo_kwc.png</div>
+						</section>
+						<section>
+							<h4>番号</h4>
+							<p> 同じ用途の画像が複数あった場合に、連番で番号を付けて分けます。<br>
+								連番は2桁でつけるようにします。</p>
+							<p>例）</p>
+							<div class="ex">フッターで使用するバナーAの場合 footer_bnr01.jpg</div>
+						</section>
+						<section>
+							<h4>状態</h4>
+							<p>ロールオーバーやカレントなどの、状態を表す必要がある際に付けます。</p>
+							<p>例）</p>
+							<div class="ex">ロールオーバー：○○_over.png、〇〇_hover.png<br>
+								選択状態：○○_selected.png</div>
+						</section>
+					</section>
+					<section>
+						<h3>id・class名の付け方</h3>
+						<p>id・class名はその名前からページ上のどこに使われているのか推測出来るものにしてください。<br>
+							例えば#headerというid名の場合、ページ上のヘッダー部分に使われているだろうということが推測できます。<br>
+							なお、コンテンツ特有のid・class名が必要な場合は、コンテンツ名を英語に翻訳したid・class名になります。</p>
+						<p>このとき、文字数が多すぎるとコードが読みにくくなるため、特徴的な単語を抜き出しても構いません。 英単語が複数にわたる場合は、「_」（アンダーバー）で単語をつなげてください。</p>
+						<p>例）</p>
+						<div class="ex">service point information →　service_point_info</div>
+						<section>
+							<h4>名前の省略（例外処置）</h4>
+							<p>命名規則の基本ルールに「 単語の文字数の省略は、基本的に行わないのが原則です。」と記述しています。 しかし省略形が広く一般的に認知されており、使用しても不自然ではない場合は積極的に利用します。 また、一般的に省略されることはあまりないが、冗長すぎてファイル管理が複雑になってしまう場合は以下の方法で省略してください。</p>
+							<p>省略形の例）</p>
+							<div class="ex">
+								<ul>
+									<li>ボタン	button → btn（ボタンに関しては常にbtnで記述）</li>
+									<li>テキスト text → txt（テキストに関しては常にtxtで記述）</li>
+									<li>背景	background → bg （背景に関しては常にbgで記述）</li>
+									<li>ナビゲーション　navigation → nav</li>
+									<li>紹介　introduction → intro</li>
+									<li>確認	confirmation → confirm</li>
+									<li>お知らせ　information → info</li>
+									<li>contents → conts</li>
+								</ul>
+							</div>
+						</section>
+						<section>
+							<h4>id・class名の使い分け</h4>
+							<p class="txt_bold">id</p>
+							<ol>
+								<li>ヘッダー・フッター・メインコンテンツ・サイドバーなど大枠のレイアウトワイヤースタイル</li>
+								<li>恒久的にページで唯一となるコンテンツのスタイル</li>
+								<li>ページ内で「章」にあたるコンテンツの最上位階層の要素</li>
+								<li>ページ内アンカーの対象となる要素</li>
+							</ol>
+							<p class="txt_bold">class</p>
+							<ol>
+								<li>サイト共通のスタイル</li>
+								<li>IDに当てはまらない全てのスタイル</li>
+							</ol>
+						</section>
+					</section>
+				</section>
+				<!--naming_end-->
+				<section class="html h2_conts" id="html">
+					<h2>HTML</h2>
+					<p>HTMLの記述は以下を基本ルールとします。</p>
+					<ol class="panel">
+						<!--<li>インデントには半角スペース2個分のタブを使用してください。</li>-->
+						<li>通常「”」（ダブルクォート）を使います。属性値に対して「’」（シングルクォート）を使用しないでください。</li>
+						<li>省略できる閉じタグを省略しないでください。(例えば&lt;/li&gt;や&lt;/body&gt;)。</li>
+						<li>エンプティ要素（img ・ br ・ meta ・ linkなど）は最後を閉じないでください。</li>
+						<li>Alt属性は必ず記述してください。適切な文言がない場合はNull値とします。</li>
+						<li>target属性は_blank指定とします。</li>
+					</ol>
+					<section>
+						<h3>マークアップ</h3>
+						<ul>
+							<li>文書構造的に正しいマークアップを行なってください。</li>
+							<li>タグ（divやspanなど）を過剰に使用したコードを書かないでください。</li>
+							<li>コンテンツやテキストの増減で崩れない構造にしてください。</li>
+						</ul>
+						<section>
+							<h4>マークアップのコツ</h4>
+							<p class="ex">マークアップをするうえで最大の問題となるものがデザインです。<br>
+								デザインの表現は、ときに文書構造を無視し見た目を優先します。<br>
+								そういったデザインを見たままマークアップしてしまうと誤った文書構造になっていまいます。<br>
+								そうならないために、マークアップの際にはデザインを無視し、目次は何か、見出しとそれに対応する文章は何か、文章は段落なのか箇条書きなのかを考えながら1サイトを1冊の本にするイメージで行なうことで正しい文書構造を考えながらマークアップすることができます。</p>
+						</section>
+					</section>
+					<section>
+						<h3>html5の仕様</h3>
+						<p>記述は以下のように設定します。</p>
+						<pre><code>
+&lt;!doctype html&gt;
+&lt;html lang=“ja”&gt;
+
+&lt;head&gt;
+&lt;meta charset="utf-8"&gt;
+&lt;title&gt;The HTML5 Herald&lt;/title&gt;
+&lt;meta name="description" content="The HTML5 Herald"&gt;
+&lt;meta name="author" content="SitePoint"&gt;
+&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+&lt;link href="/heartdesign/css/index_sp.css" rel="stylesheet" type="text/css" charset="utf-8" media="all"&gt;
+&lt;script src="https://code.jquery.com/jquery-2.1.3.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="/heartdesign/js/index.js" charset="utf-8"&gt;&lt;/script&gt;
+&lt;!--[if lt IE 9]&gt;
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"&gt;&lt;/script&gt;
+&lt;![endif]--&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;script src="js/scripts.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+						<section>
+							<h4>DOCTYPE</h4>
+							<p>本ガイドラインで定めるHTMLの仕様は以下の通りです。</p>
+							<div class="ex">DTD（文書型定義）：HTML5 <br>
+								Charset:utf-8</div>
+							<p>その為、DOCTYPEの記述は以下のようになります。</p>
+							<pre><code>&lt;!DOCTYPE html&gt;
+</code></pre>
+						</section>
+						<section>
+							<h4>lang要素</h4>
+							<p>サイトにふさわしいlang属性（日本語サイトであれば「ja」英語サイトであれば「en」）を指定しましょう。</p>
+							<pre><code>&lt;html lang="ja"&gt;
+&lt;!-- ... --&gt;
+&lt;/html&gt;
+</code></pre>
+						</section>
+						<section>
+							<h4>文字コード</h4>
+							<p>素早く、そして簡単に適切なレンダリングがされるよう文字エンコードを宣言しましょう。こうすることで、特殊文字を使用しなくても良くなります。</p>
+							<pre><code>&lt;meta charset="utf-8"&gt;
+</code></pre>
+						</section>
+						<section>
+							<h4>title要素、meta要素（keywords、description）</h4>
+							<p>ユーザビリティ、アクセシビリティ、SEOの観点から適切なものを設定します。</p>
+						</section>
+						<section>
+							<h4>Internet Explorerのレンダリングモード</h4>
+							<p>headタグに以下のコードを記述し、互換表示なしの最新モードでレンダリングされるようにしてください。</p>
+							<pre><code>&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+</code></pre>
+							<p>最近のInternet Explorerでは表示を古いバージョンのものにする互換表示機能があります。 この機能をユーザー側で意図せず有効にしてしまい、表示が崩れることがあるため、互換表示機能をOFFにするために上記のコードを使用します。</p>
+						</section>
+						<section>
+							<h4>外部リンク</h4>
+							<ul>
+								<li>HTML ファイル内は基本 HTML コードのみの記述とし、CSS や JavaScript などについては外部ファイルにします。</li>
+								<li>CSS と JavaScriptファイルの読み込み順は 「CSS」→「JavaScript」とします。</li>
+								<li>linkタグには、href,rel,charset,mediaの4属性を指定します。type属性は必要ありません。</li>
+							</ul>
+							<pre><code>&lt;link href="/heartdesign/css/index_sp.css" rel="stylesheet" charset="utf-8" media="all"&gt;
+</code></pre>
+							<ul>
+								<li>jsの読み込みには、src,type,charsetの3属性を指定します。</li>
+							</ul>
+							<pre><code>&lt;script type="text/javascript" src="/heartdesign/js/index.js" charset="utf-8"&gt;
+&lt;/script&gt;
+</code></pre>
+						</section>
+						<section>
+							<h4>IE対応</h4>
+							<p>ユーザーがIE8またはそれ以前のブラウザー対象のサイトを作っている場合、デザインがばらばらにならないようにする必要があります。 以下の条件コメントは、新しいHTML要素のスタイルが古いバージョンのIEでも適用されるようになります。</p>
+							<pre><code>&lt;!--[if lt IE 9]&gt;
+	&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"&gt;
+	&lt;/script&gt;
+&lt;![endif]--&gt;
+</code></pre>
+						</section>
+					</section>
+				</section>
+				<!--html_end-->
+				<section class="css h2_conts" id="css">
+					<h2>CSS</h2>
+					<p>CSSの記述は以下を基本ルールとします。 スタイルシートは複雑化しやすいため、統一されたルールに則った構造設計や記述を行ってください。</p>
+					<ol class="panel">
+						<li>CSSの定義は原則として外部CSSに記述してclass及びidで呼び出します。</li>
+						<li>HTMLに直接記述する事は原則として禁止します。</li>
+						<li>Charsetの記述はHTMLと同じ「UTF-8」を設定。</li>
+						<li>全ての宣言をセミコロンで終わらせてください。</li>
+						<li>値が「0」なら単位を省略します。</li>
+						<li>小数点以下の値を指定する時、1の位が0なら省略します。（-0.5pxではなく-.5px）</li>
+						<li>line-height に単位はつけないでください。</li>
+						<li>画面の装飾は基本的にCSSでのみ行い、HTMLでは行いません。</li>
+					</ol>
+					<section>
+						<h3>セレクタの書き方</h3>
+						<ul>
+							<li>共通スタイルはどこでも使えるように、IDを含めないようにしてください。</li>
+							<li>共通スタイル以外は必ずIDから始めてください。</li>
+							<li>全称セレクタは使用禁止とします。</li>
+							<li>HTMLに出てくるコンテンツの順番とセレクタの順番を同じにします。</li>
+							<li>セレクタはできるだけ短くするように努めてください。</li>
+						</ul>
+					</section>
+					<section>
+						<h3>宣言の順序</h3>
+						<p>CSSのプロパティの記述順を以下のように定めます。</p>
+						<ol>
+							<li>位置関係を定義するプロパティ<br>
+								display position float など</li>
+							<li>ボックスモデルを定義するプロパティ<br>
+								width height border など</li>
+							<li>文字の体裁やフォントを定義するプロパティ<br>
+								font color text-align など</li>
+							<li>見た目に関するプロパティ</li>
+						</ol>
+						<p>※上記4つのブロックが確立されていれば、その中でのプロパティの順番は問いません。</p>
+						<p>例）</p>
+						<pre><code>.declaration-order {
+/* Positioning */
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 100;
+
+/* Box-model */
+	display: block;
+	float: right;
+	width: 100px;
+	height: 100px;
+
+/* Typography */
+	font: normal 13px "Helvetica Neue", sans-serif;
+	line-height: 1.5;
+	color: #333;
+	text-align: center;
+
+/* Visual */
+	background-color: #f5f5f5;
+	border: 1px solid #e5e5e5;
+	border-radius: 3px;
+
+/* Misc */
+	opacity: 1;
+}</code></pre>
+					</section>
+					<section>
+						<h3>フォント周りの単位指定について</h3>
+						<section>
+							<h4>font-size</h4>
+							<p>上からpx,remの順に指定してください</p>
+							<p>例）</p>
+							<pre><code>html { font-size: 62.5%;} /* font-size 62.5% = 10px = 1rem */
+body {
+	font-size: 10px;
+	font-size: 1.0rem;
+}</code></pre>
+							<div class="ex">remはrootであるHTMLのフォントサイズを基準とした相対値指定となるため、HTMLを10pxとしておけば14pxのときは1.4rem、26pxのときは2.6remといった形で計算せずに指定したいpxを相対値で指定できるため簡単に扱うことが出来ます。</div>
+						</section>
+						<section>
+							<h4>line-height</h4>
+							<p>単位なしで指定してください。</p>
+							<p class="txt_bold">なぜ単位をつけないのか</p>
+							<div class="ex"><ul>
+<li>line-heightでは、font-sizeとline-heightが掛け合わされた値が一行の高さとして指定されます。 <br>
+例えば、p { font-size: 14px; line-height: 1em; }といったスタイルの場合には一行の高さが14pxとなります。 （14*1=14）</li>
+							<li>単位を指定した場合には親要素の一行の高さを子孫要素に継承し、<br>指定しない場合にはline-heightの値を子孫要素に継承します。</li>
+</ul>
+							
+							以上を踏まえて、単位を指定した場合を考えてみると、 例えば単位をつけて一行の高さが14pxで継承されてしまうと、子孫要素のfont-sizeが26pxだった場合に行間が14pxとなり、<span class="marker">テキストの方が大きな状態となります。</span>こうなると、一行目と二行目のテキストが重なってしまいます。単位を指定しない場合は、変化するフォントサイズに適切な行間を計算で出すことができます。</div>
+						</section>
+					</section>
+					<section>
+						<h3>リセットについて</h3>
+						<p>リセットcssを外部リンクとして読み込みます。 &lt;link&gt;の中でも、最も上の位置（最初）に記述してください。</p>
+					</section>
+					<section>
+						<h3>ベンダープリフィックスについて</h3>
+						<p>ベンダープリフィックスを付与する時は、値が揃う位置までインデントして揃えてください。こうする事で、複数行の編集が容易になります。</p>
+						<p>例）</p>
+						<pre><code>/* Prefixed properties */
+.selector {
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+          box-shadow: 0 1px 2px rgba(0,0,0,.15);
+}</code></pre>
+						<p>また、順番は以下のようになるよう努めてください。</p>
+						<ol>
+							<li>-webkit-</li>
+							<li>-moz-</li>
+							<li>-ms-</li>
+							<li>-o-</li>
+							<li>ベンダープレフィックスなしのプロパティ</li>
+						</ol>
+						<p>※そのサイトでサポートするブラウザに合わせて１～４は削除してください。</p>
+					</section>
+					<section>
+						<h3>CSSハックについて</h3>
+						<p>CSSハックとは、Webブラウザ間のCSSの解釈の違いやバグを振り分けの条件とし、特定のブラウザに対しスタイルを適用、または非適用とする手法の事をいいます。 基本的に利用しないのを原則とします。</p>
+					</section>
+					<section>
+						<h3>clearfixの書き方</h3>
+						<p>以下のコードを使用してください。</p>
+						<pre><code>.clearfix:after {
+	display: block;
+	clear: both;
+	content: "";
+}</code></pre>
+					</section>
+					　</section>
+				　<!--css_end-->
+				<section class="js h2_conts" id="js">
+					<h2>JavaScript</h2>
+					<p>JavaScriptの記述は以下を基本ルールとします。</p>
+					<ol class="panel">
+						<li>HTMLやCSSで出来ないかを考えてから使用してください。</li>
+						<li>何をしているものかコメントを付けてください。</li>
+						<li>動作チェックの他に、見ただけでは分からないようなエラーがでていないか各ブラウザのデベロッパーツールのコンソールで確認してください。</li>
+						<li>外部JavaScriptファイルの読み込みは、動作に問題がない限りは
+							&lt;/body&gt;
+							の直前で行い、問題がある場合には
+							&lt;head&gt;
+							…
+							&lt;/head&gt;
+							内で読み込んでください。 </li>
+						<li>複数のページで使うことが想定されるものはcommon.jsにまとめてください。</li>
+						<li>jQueryプラグインやその他ライブラリは軽量化（ミニファイ）されたものを使用してください。</li>
+					</ol>
+					<pre><code>	&lt;script type="text/javascript" src="/common/js/jquery.js"&gt;&lt;/script&gt;
+	&lt;script type="text/javascript" src="/common/js/rollover.js"&gt;&lt;/script&gt;
+&lt;/body&gt;</code></pre>
+					<section>
+						<h3>ライブラリについて</h3>
+						<p>対応ブラウザがIE9以上であればjQuery 3.X系を使用してください。 対応ブラウザにIE8以下が含まれる場合はjQuery 1.12 の最新版を使用してください。</p>
+					</section>
+				</section>
+				<!--js_end-->
+				<section class="sp h2_conts" id="sp">
+					<h2>スマホコーディング</h2>
+					<section>
+						<h3>Viewportの設定</h3>
+						<p>リキッドデザイン（ユーザーによる表示倍率の操作不可）のときは回転しても表示倍率や文字サイズが変更されないよう以下の設定をしてください。</p>
+						<pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"&gt;</code></pre>
+						<div class="ex">
+							<ul>
+								<li>content="width=device-width /*端末画面の幅に合わせる*/</li>
+								<li>initial-scale /*初期のズーム倍率*/</li>
+								<li>minimum-scale /*最小倍率*/</li>
+								<li>maximum-scale/*最大倍率*/</li>
+								<li>user-scalable /*ズームの操作 yes 許可する （初期値）/ no 許可しない*/</li>
+							</ul>
+						</div>
+						<p>User-scalableをnoにしないと回転したときに表示倍率が変わってしまいますが、ユーザーが拡大・縮小操作をできないといったデメリットもあるため仕様を確認して下さい。</p>
+					</section>
+					<section>
+						<h3>文字サイズ自動調節機能</h3>
+						<p>AndroidのChromeブラウザで閲覧した際に部分的にフォントサイズが意図せず大きくなってしまうことがあります。以下の解決方法を記述してください。</p>
+						<pre><code>body {
+	-webkit-text-size-adjust: 100%;
+}
+/*pのテキストが大きい場合*/
+p {
+	max-height: 100%;
+}
+</code></pre>
+					</section>
+					<h3>画像について</h3>
+					<p>スマホコーディング/レスポンシブウェブデザインを行うにあたり、 PC用の画像とSP（スマホ）用の画像が必要になります。 ファイル名は以下のように区別してください。 <span class="marker">また、PCサイズ＝SPの二倍サイズ…のように、一枚のサイズを切り替えて使用する場合は 通常の命名で構いません。</span></p>
+					<p>例）</p>
+					<div class="ex">
+						<ul>
+							<li>image_h1_pc.jpg/* PC */</li>
+							<li>image_h1_sp.jpg/* SP */</li>
+							<li>image_h1.jpg/* PC、SP共通して使用する場合 */</li>
+						</ul>
+					</div>
+					<section>
+						<h3>Ratina（高解像度）ディスプレイへの対応方法</h3>
+						<p>デザインデータが640pxのサイズで作られている場合は、高解像度ディスプレイ向けのデザインになっていますので以下のルールでスライスと配置をしてください。</p>
+						<ul>
+							<li>画像サイズは余白を含めてよいので、必ず偶数にしてください。</li>
+							<li>imgタグで配置するときはwidthを画像サイズの2分の1の値で指定すること。<br>
+								その際heightは指定しないでください。</li>
+							<li>背景に指定するときはbackgrond-sizeで2分の1の値を指定すること。<br>
+								Retina用にスライスした画像のファイル名は以下のようにしてください。</li>
+						</ul>
+						<p>例）</p>
+						<div class="ex">
+							<ul>
+								<li>image_h1_sp.jpg/* 通常の画像用指定　*/</li>
+								<li>image_h1_sp@2x.jpg/* Retinaディスプレイ用高解像度画像指定　*/</li>
+							</ul>
+						</div>
+					</section>
+				</section>
+				<!--sp_end-->
+				<section class="responsive h2_conts" id="responsive">
+					<h2>レスポンシブウェブデザイン</h2>
+					<section>
+						<h3>コーディングする順番</h3>
+						<p>レスポンシブウェブデザインでは、 モバイルファーストでコーディングを行ってください。</p>
+						<p>例）</p>
+						<div class="ex">例えば、PCのデザインで左右に写真があるデザインがあった際、PCはどちらを先にマークアップしたとしても、CSSで調整が可能です。（基本的には左が先ですが）<br>
+							しかしスマートフォンでは、その写真が上下に並ぶデザインになる可能性があります。その場合、マークアップは必ず上から順に並べてマークアップする必要があります。PCを基準にしたがゆえの問題を防ぐために、スマートフォンを基準に考えます。</div>
+						<h3>ブレイクポイントの基準・書き方</h3>
+						<p>ブレイクポイントは下記を基準に設定します。 ただし、あくまで基準のためデザインや対応デバイスによっては変更します。</p>
+						<ul>
+							<li>スマートフォン<br>
+								0～599px</li>
+							<li>タブレット<br>
+								600px～959px</li>
+							<li>PC<br>
+								960px以上</li>
+						</ul>
+					</section>
+					<section>
+						<h3>メディアクエリを記述する箇所</h3>
+						<p>スマートフォン用のCSSを記述し終えた下に、タブレット用のCSS、PC用のCSSを記述してください。<br>
+							デフォルトでスマートフォン用のスタイルを定義し、タブレット／PC用のスタイルをMedia Queriesを使って上書きしていくモバイルファーストな方法です。</p>
+						<div class="ex">要素ごとに調整を行うよりも、スマートフォンの調整やタブレットの調整といったデバイスごとの調整を行うことの方が多いため、デバイスごとにまとめて記述するようにします。</div>
+						<pre><code>/* ここにスマートフォン用のCSS *
+
+@media only screen and (min-width: 600px and max-width: 959px) {
+/* ここにタブレット用のCSS */
+}
+				
+@media only screen and (min-width: 960px) {
+/* ここにPC用のCSS */
+}</code></pre>
+					</section>
+					<section>
+						<h3>フォントサイズ切り替え</h3>
+						<p>フォントサイズ切り替えは以下2パターンとします。<br>
+							LPなど小～中規模サイトはパターン1、<br>
+							複数階層にわたる大規模サイトはパターン2を使用してください。</p>
+						<h4>パターン1</h4>
+						<p>htmlのフォントサイズのみ、メディアクエリーで調節します。</p>
+						<div class="ex">remの値は、html要素に対して相対的です。<br>
+							つまり、htmlが基準となっているため、htmlのフォントサイズを大きくすれば、 他要素のサイズも大きくなります。（比率は変わりません）</div>
+						<pre><code>html{
+	font-size:10px; /* font-size 1.0rem = 10px */
+}
+body {
+	font-size: 16px; 
+	font-size: 1.6rem;  /* font-size 1.6rem = 16px */
+}
+/* Typography
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+h1 {
+	font-size: 4.0rem;
+}
+h2 {
+	font-size: 3.6rem;
+}
+h3 {
+	font-size: 3.0rem;
+}
+h4 {
+	font-size: 2.4rem;
+}
+h5 {
+	font-size: 1.8rem;
+}
+h6 {
+	font-size: 1.5rem;
+}
+/* Larger than phablet */
+@media (min-width: 600px) {
+html{
+	font-size:20px; /* タブレットではSP版の二倍の大きさで表示される */
+}
+}</code></pre>
+						<h4>パターン2</h4>
+						<p>メディアクエリーの画面幅ごとに、要素のフォントサイズを設定していきます。</p>
+						<pre><code>html{
+	font-size: 62.5%; /* font-size 62.5% = 10px = 1rem */
+}
+body {
+	font-size: 1.6px; 
+	font-size: 1.6rem;  /* font-size 1.6rem = 16px */
+}
+/* Typography
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+h1 {
+	font-size: 4.0rem;
+}
+h2 {
+	font-size: 3.6rem;
+}
+h3 {
+	font-size: 3.0rem;
+}
+h4 {
+	font-size: 2.4rem;
+}
+h5 {
+	font-size: 1.8rem;
+}
+h6 {
+	font-size: 1.5rem;
+}
+/* Larger than phablet */
+@media (min-width: 600px) {
+h1 { font-size: 5.0rem; }
+h2 { font-size: 4.2rem; }
+h3 { font-size: 3.6rem; }
+h4 { font-size: 3.0rem; }
+h5 { font-size: 2.4rem; }
+h6 { font-size: 1.5rem; }
+}</code></pre>
+					</section>
+					<section>
+						<h3>表示切り替え</h3>
+						<p>Media Queryを使用してクラスの表示非表示を切り替えてください。</p>
+						<p>例）</p>
+						<div class="ex">「.hidePC」、「.hideSP」などで切り替える</div>
+						<pre><code>/* スマートフォン */
+.hideSP{
+	display: block;
+}
+.hidePC {
+	display: none;
+}
+.hideTab {
+	display: none;
+}
+
+/* PC */
+@media only screen and (min-width: 960px) {
+.hideSP{
+	display: none;
+}
+.hidePC {
+	display: block;
+}
+.hidePC {
+	display: block;
+}
+}</code></pre>
+					</section>
+					<section>
+						<h3>フルードイメージの作り方</h3>
+						<p>フルードイメージは画像のサイズをブラウザのウィンドウサイズに合わせて表示する方法です。 通常、imgタグにはwidthとheightを指定するのが必須ですが、フルードイメージにする場合にはwidthとheightの指定は行いません。</p>
+						<pre><code>/* html */
+&lt;img src="img/sample.png" alt=""&gt;
+/* css */
+img {
+	max-width: 100%;
+	height: auto;
+}</code></pre>
+					</section>
+				</section>
+			</div>
+			<!--main_end--> 
+		</div>
+		<!--col-9_end-->
+		<nav class="columns three" id="nav">
+			<ul>
+				<li><a href="#about">ガイドラインについて</a></li>
+				<li><a href="#overview">WEBサイト仕様概要</a></li>
+				<li><a href="#code_format">コードフォーマット</a></li>
+				<li><a href="#comment">コメントアウト</a></li>
+				<li><a href="#naming">命名規則</a></li>
+				<li><a href="#html">HTML</a></li>
+				<li><a href="#css">CSS</a></li>
+				<li><a href="#js">JavaScript</a></li>
+				<li><a href="#sp">スマホコーディング</a></li>
+				<li><a href="#responsive">レスポンシブウェブデザイン</a></li>
+				<li><a href="accessibility/index.html">アクセシビリティ</a></li>
+			</ul>
+			<!--<button><img src="img/btn_open.png"></button>--> 
+		</nav>
+	</div>
+</div>
+<!-- End Document–––––––––––––––––––––––––––––––––––––––––––––––––– --> 
+<!--for treewiew-->
+<link rel="stylesheet" href="css/jquery.treeview.css" />
+<script src="js/jquery.cookie.js" type="text/javascript"></script> 
+<script src="js/jquery.treeview.js" type="text/javascript"></script> 
+<script type="text/javascript">
+$(function() {
+	$("#browser").treeview();
+});
+</script> 
+<!--/for treewiew-->
+</body>
+</html>

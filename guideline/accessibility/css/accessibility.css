@@ -1,0 +1,9 @@
+@charset "UTF-8";
+h3 {
+	border-bottom: 1px solid #00A393;
+	color: #00A393;
+}
+
+#nav ul {
+	background: #00A393;
+}
